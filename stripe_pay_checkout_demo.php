@@ -35,9 +35,8 @@ if(isset($_POST['stripeToken']))
 	$amount_cents = str_replace(".","","10.52");  // Chargeble amount
 	$invoiceid = "14526321";                      // Invoice ID
 	$description = "Invoice #" . $invoiceid . " - " . $invoiceid;
-	
-	try {
 
+	try {
 		$charge = Stripe_Charge::create(array(		 
 			  "amount" => $amount_cents,
 			  "currency" => "usd",
